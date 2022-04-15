@@ -48,7 +48,7 @@ Checks if the current character in 't' is equal to val
 **/
 void match(token *tok, char val){
     if((*tok).t[tok->pos] != val || (*tok).t[tok->pos] == '\0'){
-        printf("String not accepted\n");
+        fprintf(stderr, "String not accepted\n");
         exit(1);
     }
     tok_next(tok);
@@ -73,11 +73,12 @@ Public function that calls balanced and determines whether the input string is a
 **/
 void parse(token *tok, char *grammar){
     if(!tok){
-        fprintf(stderr, "token struct is NULL");
+        fprintf(stderr, "token struct is NULL\n");
+        exit(1);
     }
     balanced(tok, grammar);
     if((*tok).t[tok->pos] != '\0'){
-        printf("String not accepted\n");
+        fprintf(stderr, "String not accepted\n");
         exit(1);
     }
     printf("String accepted\n");
