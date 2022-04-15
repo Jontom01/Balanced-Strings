@@ -2,7 +2,8 @@
 This program will determine whether an input string is accepted for any language that belongs to the set A.
 
 
-![Screenshot (8)](https://user-images.githubusercontent.com/67528141/163650805-ff45bb61-2a59-40e2-b48c-7b48c23b915f.png)
+![Screenshot (9)](https://user-images.githubusercontent.com/67528141/163653141-a70258d1-c694-4253-b665-ffa4647b9f16.png)
+
 
 
 The following is an example with c = '(' and s = ')'. 
