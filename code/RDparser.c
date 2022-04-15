@@ -50,7 +50,7 @@ Checks if the current character in 't' is equal to val
 **/
 void match(token *tok, char val){
     if((*tok).t[tok->pos] != val || (*tok).t[tok->pos] == '\0'){
-        printf("string not accepted\n");
+        printf("String not accepted\n");
         exit(1);
     }
     tok_next(tok);
