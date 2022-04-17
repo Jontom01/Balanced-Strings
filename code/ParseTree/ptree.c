@@ -7,16 +7,23 @@
 //Parse Tree Implementation specified for the Balanced-Strings RDparser
 
 /**
-Allocates memory and set members for new node
+Allocates memory and set members for new terminal node
+@param val - data value for node
 @return n - node struct
 **/
-node *init_node(){
+node *init_term_node(char val){
     node *n = malloc(sizeof(node));
     if(!n){
         fprintf(stderr, "could not allocate memory\n");
         exit(1);
     }
-    n->data = '\0';
+    char *buf = malloc(sizeof(char));
+    if(!buf){
+        fprintf(stderr, "could not allocate memory\n");
+        exit(1);
+    }
+    void *cdata = memmove(buf,&val,sizeof(char));
+    n->data = cdata;
     n->exp = false;
     n->left = NULL;
     n->mid = NULL;
@@ -24,17 +31,27 @@ node *init_node(){
     return n;
 }
 /**
-Returns the starting expression node
-@return tree - node struct
+Allocates memory and set members for new expression node
+@return n - node struct
 **/
-node *init_ptree(){
-    node *tree = init_node();
-    if(!tree){
+node *init_exp_node(){
+    node *n = malloc(sizeof(node));
+    if(!n){
         fprintf(stderr, "could not allocate memory\n");
         exit(1);
     }
-    tree->exp = true;
-    return tree;
+    char *buf = malloc(sizeof(char)*6);
+    if(!buf){
+        fprintf(stderr, "could not allocate memory\n");
+        exit(1);
+    }
+    void *cdata = memmove(buf,"<exp>",sizeof(char)*6);
+    n->data = cdata;
+    n->exp = true;
+    n->left = NULL;
+    n->mid = NULL;
+    n->right = NULL;
+    return n;
 }
 /**
 Inserts left, middle and right node of a given node
@@ -45,19 +62,19 @@ Inserts left, middle and right node of a given node
 @return n - node struct
 **/
 node *insert(node *n, char left, char mid, char right){
+    if(!n){
+        return NULL;
+    }
     if(left != '\0'){
-        node *lnode = init_node();
-        lnode->data = left;
+        node *lnode = init_term_node(left);
         n->left = lnode;
     }
     if(mid != '\0'){
-        node *mnode = init_node();
-        mnode->data = mid;
+        node *mnode = init_term_node(mid);
         n->mid = mnode;
     }
     if(right != '\0'){
-        node *rnode = init_node();
-        rnode->data = right;
+        node *rnode = init_term_node(right);
         n->right = rnode;
     }
     return n;
@@ -71,10 +88,10 @@ void traverse(node *n){
         return;
     }
     if(n->exp == true){
-        printf("%s", "<expression> ");
+        printf("%s ", (char*)n->data);
     }
     else{
-        printf("%c ", n->data);
+        printf("%c ", *(char*)n->data);
     }
     traverse(n->left);
     traverse(n->mid);
@@ -92,8 +109,17 @@ void free_ptree(node *n){
     free_ptree(n->mid);
     free_ptree(n->right);
     if(n->exp == true){
-        free(n->left);
-        free(n->mid);
-        free(n->right);
+        if(n->left){
+            free(n->left->data);
+            free(n->left); 
+        }
+        if(n->mid){
+            free(n->mid->data);
+            free(n->mid);
+        }
+        if(n->right){
+            free(n->right->data);
+            free(n->right); 
+        }
     }
 }
