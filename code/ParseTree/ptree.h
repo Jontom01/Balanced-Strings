@@ -5,7 +5,7 @@
 
 /**
 Node struct to hold necessary data for a 3 branch parse tree implementation
-@member data - holds pointer to the value for the terminal
+@member data - holds pointer to the value for the terminal or expression
 @member exp - true if the node represents an expression instead of a terminal
 @member left - pointer to left branch node
 @member mid - pointer to middle branch node
