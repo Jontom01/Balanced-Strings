@@ -20,6 +20,6 @@ int main(int argc, char* argv[]) {
     traverse(ptree); //prints the parse tree using pre-order traversal
     printf("\n");
     free_ptree(ptree); //deallocates memory
-    free(tok); //deallocates memory
+    tok_free(tok); //deallocates memory
     return 0;
 }
