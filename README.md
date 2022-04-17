@@ -14,3 +14,5 @@ The following is an example with c = '(' and s = ')'.
 The first command line argument contains your chosen values for c and s, written as 'cs'.
 
 The second command line argument is your input string x, written as 'x'.
+
+If the given string is accepted, a parse tree will be generated.
