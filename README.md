@@ -5,11 +5,11 @@ This program will determine whether an input string is accepted for any language
 ![Screenshot (9)](https://user-images.githubusercontent.com/67528141/163653141-a70258d1-c694-4253-b665-ffa4647b9f16.png)
 
 
-
 The following is an example with c = '(' and s = ')'. 
 
 
-![Screenshot (7)](https://user-images.githubusercontent.com/67528141/163650483-03b9be86-4845-4fc5-bbc8-93a4ec3bbf12.png)
+![Screenshot (10)](https://user-images.githubusercontent.com/67528141/163720957-30ee5820-e25f-4b9c-826f-f37e64e13525.png)
+
 
 The first command line argument contains your chosen values for c and s, written as 'cs'.
 
