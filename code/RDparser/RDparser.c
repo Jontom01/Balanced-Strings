@@ -23,7 +23,6 @@ token *init_tokens(char *argv){
         sz++;
     }
     sz++;
-
     token *tok = malloc(sizeof(token));
     if(!tok){
         return NULL;
@@ -55,7 +54,6 @@ void match(token *tok, char val){
         exit(1);
     }
     tok_next(tok);
-   
 }
 /**
 Implementation of the productions of the grammar
