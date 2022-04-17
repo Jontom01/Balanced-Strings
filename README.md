@@ -15,4 +15,4 @@ The first command line argument contains your chosen values for c and s, written
 
 The second command line argument is your input string x, written as 'x'.
 
-If the given string is accepted, a parse tree will be generated. The data value of the tree vertices are either one of the terminals (c or s), or \<exp\> if the node denotes an expression.
+If the given string is accepted, a parse tree will be generated. The data value of the tree vertices are either one of the terminals (c or s), or \<exp\> if the node denotes an expression. The parse tree is printed using an implementation of pre-order traversal, which will explain the order in which each node is printed onto the screen.
