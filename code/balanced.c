@@ -15,11 +15,11 @@ int main(int argc, char* argv[]) {
         fprintf(stderr, "could not allocate memory to token members");
         exit(1);
     }
-    parse(tok, argv[1], ptree);
+    parse(tok, argv[1], ptree); //parses input string which generates parse tree following the head node ptree
     printf("Parse Tree: ");
-    traverse(ptree); //prints the parse tree 
+    traverse(ptree); //prints the parse tree using pre-order traversal
     printf("\n");
-    free_ptree(ptree);
-    free(tok);
+    free_ptree(ptree); //deallocates memory
+    free(tok); //deallocates memory
     return 0;
 }
