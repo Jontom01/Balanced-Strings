@@ -63,10 +63,8 @@ Implementation of the productions of the grammar
 **/
 void balanced(token *tok, char *grammar, node *ptree){
     if((*tok).t[tok->pos] == grammar[0]){
-        //Add branches to BST as follows,
-        //terminal leaf, expression, terminal leaf
-        insert(ptree, grammar[0], 'E', grammar[1]);
-        ptree->mid->exp = true;
+        insert(ptree, grammar[0], '\0', grammar[1]);
+        ptree->mid = init_exp_node();
         ptree = ptree->mid;
         match(tok,grammar[0]);
         balanced(tok, grammar, ptree);
