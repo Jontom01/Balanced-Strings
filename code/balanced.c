@@ -16,6 +16,7 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
     parse(tok, argv[1], ptree);
+    printf("Parse Tree: ");
     traverse(ptree); //prints the parse tree 
     printf("\n");
     free_ptree(ptree);
