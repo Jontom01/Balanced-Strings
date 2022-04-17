@@ -1,5 +1,5 @@
 # Balanced-Strings
-This program will determine whether an input string is accepted for any language that belongs to the set A.
+This program will determine whether an input string is accepted for any language that belongs to the set A. The parser is structured around the recursive descent method.
 
 
 ![Screenshot (9)](https://user-images.githubusercontent.com/67528141/163653141-a70258d1-c694-4253-b665-ffa4647b9f16.png)
