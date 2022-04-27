@@ -1,5 +1,5 @@
-#ifndef RDPARSER_H
-#define RDPARSER_H
+#ifndef SCANNER_H
+#define SCANNER_H
 
 #include <stdbool.h>
 #include "ptree.h"
